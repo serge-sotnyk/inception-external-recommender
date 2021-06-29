@@ -78,3 +78,7 @@ class Server:
         self._lock_directory.mkdir(parents=True, exist_ok=True)
         lock_path = self._lock_directory / f"{classifier_name}_{user_id}.lock"
         return FileLock(lock_path, timeout=1)
+
+    @property
+    def app(self):
+        return self._app

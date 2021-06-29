@@ -1,7 +1,4 @@
 import logging
-from pathlib import Path
-
-import wget
 
 
 def setup_logging():

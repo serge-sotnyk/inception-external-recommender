@@ -7,7 +7,7 @@ import os
 from setuptools import setup, find_packages
 
 # Package meta-data.
-NAME = "inception-external-recommender"
+NAME = "inception-rec"
 DESCRIPTION = "INCEpTION external recommender library in Python"
 HOMEPAGE = "https://inception-project.github.io/"
 EMAIL = "inception-users@googlegroups.com"
@@ -19,30 +19,19 @@ install_requires = [
     "filelock",
     "dkpro-cassis>=0.5.0",
     "joblib",
-    "gunicorn",
 ]
 
 contrib_dependencies = [
-    "numpy>=1.19",
-    "scikit-learn~=0.24.1",
-    "sklearn_crfsuite~=0.3.6",
-    "rust_fst~=0.1.2",
-    "spacy~=3.0",
-    "nltk~=3.5",
-    "jieba~=0.42",
-    "sentence-transformers~=0.3.6",
-    "lightgbm~=3.1.1",
-    "diskcache~=5.2.1"
 ]
 
 test_dependencies = [
-    "tox",
     "pytest",
     "codecov",
     "pytest-cov",
 ]
 
 dev_dependencies = [
+    "waitress",
     "black",
     "wget"
 ]
@@ -57,7 +46,7 @@ extras = {
     "test": test_dependencies,
     "dev": dev_dependencies,
     "doc": doc_dependencies,
-    "contrib": contrib_dependencies
+    "contrib": contrib_dependencies,
 }
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -75,7 +64,6 @@ about = {}
 with open(os.path.join(here, "ariadne", "__version__.py")) as f:
     exec(f.read(), about)
 
-
 # Where the magic happens:
 setup(
     name=NAME,
@@ -91,9 +79,9 @@ setup(
     keywords="uima dkpro inception nlp",
 
     project_urls={
-        "Bug Tracker": "https://github.com/inception-project/inception-external-recommender/issues",
+        "Bug Tracker": "https://github.com/serge-sotnyk/inception-external-recommender/issues",
         "Documentation": "https://github.com/inception-project/inception-external-recommender",
-        "Source Code": "https://github.com/inception-project/inception-external-recommender",
+        "Source Code": "https://github.com/serge-sotnyk/inception-external-recommender",
     },
 
     install_requires=install_requires,
